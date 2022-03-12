@@ -33,11 +33,9 @@ unsigned int faStr2(const char* str) {
         int let_ok = 0;
         if (str[i] >= 'A' && str[i] <= 'Z') {
             let_ok = 1;
-        } else if (str[i] >= 'a' && str[i] <= 'z') { 
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
             let_ok = 1;
         }
-
-        
         if (str[i] == ' ' && good_word == 1) {
             how_many_words++;
             good_word = 0;
@@ -47,8 +45,7 @@ unsigned int faStr2(const char* str) {
         } else if (str[i] != ' ' && n == 0 && str[i] >= 'A' && str[i] <= 'Z') {
             n = 1;
             good_word = 1;
-        }
-        else if (str[i] != ' ' && n == 1 && let_ok == 1) {
+        } else if (str[i] != ' ' && n == 1 && let_ok == 1) {
             n = 1;
         } else {
             n = 1;
