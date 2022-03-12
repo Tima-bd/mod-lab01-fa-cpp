@@ -1,8 +1,5 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
-#include <conio.h>
-#include <iostream>
-using namespace std;
 unsigned int faStr1(const char* str) {
     int i = 0;
     int now_word = 0;
@@ -34,9 +31,13 @@ unsigned int faStr2(const char* str) {
     int good_word = 0;
     while (str[i] != '\0') {
         int let_ok = 0;
-        if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            let_ok = 1;
+        } else if (str[i] >= 'a' && str[i] <= 'z') { 
             let_ok = 1;
         }
+
+        
         if (str[i] == ' ' && good_word == 1) {
             how_many_words++;
             good_word = 0;
@@ -46,9 +47,10 @@ unsigned int faStr2(const char* str) {
         } else if (str[i] != ' ' && n == 0 && str[i] >= 'A' && str[i] <= 'Z') {
             n = 1;
             good_word = 1;
-        } else if (str[i] != ' ' && n == 1 && let_ok == 1)
+        }
+        else if (str[i] != ' ' && n == 1 && let_ok == 1) {
             n = 1;
-        else {
+        } else {
             n = 1;
             good_word = 0;
         }
