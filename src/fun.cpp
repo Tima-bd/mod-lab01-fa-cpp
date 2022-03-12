@@ -11,7 +11,7 @@ unsigned int faStr1(const char *str) {
         {
             now_word = 0;
         }
-        else if (now_word == 0 && isdigit(str[i]))
+        else if (str[i] != ' ' && now_word == 0 && isdigit(str[i]))
         {
             now_word = 1;
             how_many_words++;
@@ -38,12 +38,12 @@ unsigned int faStr2(const char *str) {
         {
             now_word = 0;
         }
-        else if (now_word == 0 && str[i]>='A' && str[i]<='Z')
+        else if (str[i] != ' ' && now_word == 0 && str[i]>='A' && str[i]<='Z')
         {
             now_word = 1;
             good_word = 1;
         }
-        else if (now_word == 1 && ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')))
+        else if (str[i] != ' ' && now_word == 1 && ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')))
         {
             now_word = 1;
         }
@@ -69,13 +69,13 @@ unsigned int faStr3(const char *str) {
         {
             now_word = 0;
         }
-        else if (now_word == 0)
+        else if (str[i] != ' ' && now_word == 0)
         {
             now_word = 1;
             how_many_words++;
             len++;
         }
-        else if (now_word == 1)
+        else if (str[i] != ' ' && now_word == 1)
         {
             len++;
         }
